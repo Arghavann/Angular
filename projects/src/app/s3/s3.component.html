@@ -1,0 +1,46 @@
+<div class="container-sm" dir="rtl" xmlns="http://www.w3.org/1999/html">
+  <label class="form-label" for="name">نام</label>
+  <input type="text" class="form-control" id="name" [(ngModel)]="name">
+
+  <label class="form-label" for="family">نام خانوادگی</label>
+  <input type="text" class="form-control" id="family" [(ngModel)]="family">
+
+  <label class="form-label" for="age">سن</label>
+  <input type="number" class="form-control" id="age" [(ngModel)]="age">
+
+  <label class="form-label">وضعیت تاهل:</label><br>
+
+  <input type="radio" name="married" value="1" id="married" [(ngModel)]="marriedStatus">
+  <label for="married" class="form-label">متاهل</label>
+  <input type="radio" name="married" value="0" id="unmarried" [(ngModel)]="marriedStatus" >
+  <label for="unmarried" class="form-label">مجرد</label><br>
+
+<button (click)="showData($event)" class="btn btn-primary">ثبت</button>
+
+<hr>
+
+<div [class.hide]="!showCard" class="card align-content-center"style="width: 50%"
+ [style.background-color]="is18 == false ? 'green' : 'yellow'">
+  <div class="card-body">
+  <p class="card-text" [class.hide]="!showNewData" >
+    نام : {{name}}
+    - نام خانوادگی : {{family}}
+    - سن: {{age}}
+    <span [style.color]= "marriedStatus == '0' ? 'red' : 'black'" >
+      {{marriedStatus == '0' ? 'مجرد': 'متاهل'}}
+    </span>
+  </p>
+
+    <div [class.hide]="!showNewData">
+    <input type="radio" name="married1" value="1" [(ngModel)]="marriedStatus">
+    <label class="form-label">متاهل</label>
+    <input type="radio" name="married1" value="0" [(ngModel)]="marriedStatus">
+    <label class="form-label">مجرد</label>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,11 @@
+<div class="container mt-4">
+<button (click)="visibility()" class="btn btn-primary">نمایش اطلاعات</button>
+  <p *ngIf="isVisible">This is my sentence</p>
+
+<div *ngFor="let list of myList, let i = index"
+     [ngStyle]="{'backgroundColor': i % 2 ===0 ? 'white' : 'blue'}"
+      [ngClass]="{'blueText': i % 2 ===0 , 'whiteText' : i % 2 !==0}">
+  <p *ngIf="isVisible">{{list}}</p>
+</div>
+</div>
+

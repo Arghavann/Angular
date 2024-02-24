@@ -1,0 +1,43 @@
+<div class="container-sm" dir="rtl" >
+  <label class="form-label" for="name">نام</label>
+  <input type="text" class="form-control" id="name" (input)="showName($event)">
+
+  <label class="form-label" for="family">نام خانوادگی</label>
+  <input type="text" class="form-control" id="family" (input)="showFamily($event)">
+
+  <label class="form-label" for="age">سن</label>
+  <input type="number" class="form-control" id="age" (input)="showAge($event)">
+
+  <label class="form-label">وضعیت تاهل:</label><br>
+
+  <input type="radio" name="married" value="1" id="married" (input)="isMarried($event)">
+  <label for="married" class="form-label">متاهل</label>
+  <input type="radio" name="married" value="0" id="unmarried" (input)="notMarried($event)">
+  <label for="unmarried" class="form-label">مجرد</label><br>
+
+  <button (click)="showInfo($event)" class="btn btn-primary">ثبت</button>
+
+  <hr>
+
+  <div class="card align-content-center"style="width: 50%">
+    <div class="card-body">
+<p [class.hide]="!displayData">
+    <span> نام: {{name}}</span>
+      <span>-  نام خانوادگی: {{family}}</span>
+      <span>-  سن: {{age}}</span>
+      <span> وضعیت تاهل: {{marriedStatus}}</span>
+</p>
+      <div [class.hide]="!displayData">
+      <input type="radio" name="married1" value="1" (input)="isMarried($event)">
+      <label  class="form-label">متاهل</label>
+      <input type="radio" name="married1" value="0" (input)="notMarried($event)">
+      <label  class="form-label">مجرد</label><br>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
