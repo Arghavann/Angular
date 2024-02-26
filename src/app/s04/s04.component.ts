@@ -20,6 +20,6 @@ export class S04Component {
     const newTimeStamp = new Date().toString();
     this.timeStamp = newTimeStamp;
     this.myList.push(newTimeStamp);
-    console.log(this.myList)
+    console.log(this.myList);
   }
 }
