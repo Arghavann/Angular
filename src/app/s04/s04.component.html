@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <button (click)="visibility()" class="btn btn-primary">نمایش اطلاعات</button>
+  @if (isVisible === true ){
+    <p>This is my sentence</p>
+  }
+
+@for (list of myList;track i;let i =$index, e= $even){
+  <div>
+  @if (isVisible === true){
+      <p [ngStyle]="{'backgroundColor' : e ? 'white' : 'blue'}"
+          [ngClass]="{'blueText' : e , 'whiteText': !e}"
+      >{{list}}</p>
+  }
+  </div>
+}
+</div>
